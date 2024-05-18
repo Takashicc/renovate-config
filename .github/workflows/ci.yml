@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v1.0.1
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
         with:
           config-path: renovate.json
