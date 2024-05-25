@@ -38,6 +38,14 @@
         "minor"
       ],
       "groupName": "rust deps"
+    },
+    {
+      "matchManagers": "npm",
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "groupName": "npm deps"
     }
   ]
 }
