@@ -9,43 +9,47 @@
   "dependencyDashboard": false,
   "prConcurrentLimit": 5,
   "minimumReleaseAge": "10 days",
-  "platformCommit": true,
-  "reviewers": [
-    "Takashicc"
-  ],
+  "platformCommit": "enabled",
+  "reviewers": ["Takashicc"],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
     {
       "matchManagers": "github-actions",
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
+      "matchUpdateTypes": ["patch", "minor"],
       "groupName": "github actions deps"
     },
     {
+      "matchManagers": "github-actions",
+      "matchUpdateTypes": ["pinDigest"],
+      "groupName": "github actions digest"
+    },
+    {
+      "matchManagers": "github-actions",
+      "matchUpdateTypes": ["digest"],
+      "groupName": "github actions digest update"
+    },
+    {
       "matchManagers": "cargo",
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
+      "matchUpdateTypes": ["patch", "minor"],
       "groupName": "rust deps"
     },
     {
       "matchManagers": "npm",
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
+      "matchUpdateTypes": ["patch", "minor"],
       "groupName": "npm deps"
+    },
+    {
+      "matchManagers": "nuget",
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "dotnet deps"
+    },
+    {
+      "matchDatasources": "go",
+      "matchPackageNames": "/^github.com/aws/aws-sdk-go-v2/",
+      "groupName": "aws-sdk-go-v2"
     }
   ]
 }
